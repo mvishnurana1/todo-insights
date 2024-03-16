@@ -6,6 +6,7 @@ import {
   IonToolbar
 } from '@ionic/react';
 import './Tab1.scss';
+import NailBoard from '../components/NailBoard/NailBoard';
 
 const Tab1: React.FC = () => {
   return (
@@ -16,11 +17,7 @@ const Tab1: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tasks</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+          <NailBoard />
       </IonContent>
     </IonPage>
   );
