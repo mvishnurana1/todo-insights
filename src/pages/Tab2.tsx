@@ -15,15 +15,10 @@ const Tab2: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Growth</IonTitle>
+          <IonTitle>Growth Pad</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Growth</IonTitle>
-          </IonToolbar>
-        </IonHeader>
         <ChartsContainer />
       </IonContent>
     </IonPage>

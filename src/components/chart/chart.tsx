@@ -25,12 +25,14 @@ interface propType {
     dataValue: number[],
     timeFrame: string,
     borderColor: string,
+    headingSubtitle?: string,
 }
 
 const Chart: React.FC<propType> = ({
     borderColor,
     dataValue,
-    timeFrame
+    timeFrame,
+    headingSubtitle
 }) => {
 
     const options = {
@@ -63,7 +65,6 @@ const Chart: React.FC<propType> = ({
         labels,
         datasets: [
             {
-                backgroundColor: "rgb(226, 59, 59)",
                 borderColor: borderColor,
                 data: dataValue,
                 tension: 0.3
@@ -73,7 +74,9 @@ const Chart: React.FC<propType> = ({
 
     return (
         <div>
-            <h2>{timeFrame}</h2>
+            <h2 className="centre">
+                <span>{timeFrame} {headingSubtitle}</span>
+            </h2>
             <Line data={data} options={options} />
         </div>)
 }
