@@ -24,9 +24,14 @@ ChartJS.register(
 interface propType {
     dataValue: number[],
     timeFrame: string,
+    borderColor: string,
 }
 
-const Chart: React.FC<propType> = ({ dataValue, timeFrame }) => {
+const Chart: React.FC<propType> = ({
+    borderColor,
+    dataValue,
+    timeFrame
+}) => {
 
     const options = {
         responsive: true,
@@ -58,8 +63,8 @@ const Chart: React.FC<propType> = ({ dataValue, timeFrame }) => {
         labels,
         datasets: [
             {
-                backgroundColor: "rgb(235, 88, 88)",
-                borderColor: "rgb(140, 52, 235)",
+                backgroundColor: "rgb(226, 59, 59)",
+                borderColor: borderColor,
                 data: dataValue,
                 tension: 0.3
             }
@@ -67,8 +72,8 @@ const Chart: React.FC<propType> = ({ dataValue, timeFrame }) => {
     };
 
     return (
-        <div className='chart-section'>
-            <h2 className='sub-title'>{timeFrame}</h2>
+        <div>
+            <h2>{timeFrame}</h2>
             <Line data={data} options={options} />
         </div>)
 }
