@@ -5,7 +5,7 @@ import {
   IonTitle,
   IonToolbar
 } from '@ionic/react';
-import './Tab2.css';
+import './Tab2.scss';
 import Chart from '../components/chart/chart';
 
 const Tab2: React.FC = () => {

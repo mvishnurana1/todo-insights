@@ -2,7 +2,6 @@ import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
-  IonLabel,
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
@@ -53,11 +52,11 @@ const App: React.FC = () => (
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/tab1">
             <IonIcon aria-hidden="true" icon={ trophyOutline } />
-            <IonLabel>Tab 1</IonLabel>
+            {/* <IonLabel>Tab 1</IonLabel> */}
           </IonTabButton>
           <IonTabButton tab="tab2" href="/tab2">
             <IonIcon aria-hidden="true" icon={ pulseOutline } />
-            <IonLabel>Growth</IonLabel>
+            {/* <IonLabel>Growth</IonLabel> */}
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
