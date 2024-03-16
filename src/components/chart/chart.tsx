@@ -46,23 +46,30 @@ const Chart: React.FC<propType> = ({
         },
         scales: {
             y: {
+                border: {
+                    color: borderColor
+                },
                 ticks: { display: false },
                 grid: { display: false }
             },
             x: {
+                border: {
+                    color: borderColor
+                },
                 ticks: { display: false },
                 grid: { display: false }
-            }
+            },
         },
         elements: {
             point: { radius: 0 }
-        }
+        },
     };
 
-    const labels = new Array(30).fill("");
+    const labels = new Array(7).fill("");
 
     const data = {
         labels,
+
         datasets: [
             {
                 borderColor: borderColor,
@@ -74,9 +81,9 @@ const Chart: React.FC<propType> = ({
 
     return (
         <div>
-            <h2 className="centre">
-                <span>{timeFrame} {headingSubtitle}</span>
-            </h2>
+            <div className="centre">
+                <h2>{timeFrame} </h2> <span>{headingSubtitle}</span>
+            </div>
             <Line data={data} options={options} />
         </div>)
 }

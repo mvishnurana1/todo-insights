@@ -7,25 +7,31 @@ const ChartsContainer: React.FC = () => {
         <h2 className='centre'>Activity So far</h2>
 
         <div style={{ marginTop: '2rem' }}>
-            <Chart
-                borderColor='#FF204E'
-                dataValue={[122, 52, 82, 12, 42, 62, 12, 42, 72, 32, 2, 42, 12, 2, 142, 22, 62, 142, 128, 65, 21, 92, 72, 32, 92, 32, 72, 62, 122, 21]}
-                timeFrame= { `${getTodaysDate()}th, ${getMonth().toUpperCase()}` }
-            />
+            <div>
+                <Chart
+                    borderColor='#FF204E'
+                    dataValue={[-100, 0, 25, 50, 100, 122]}
+                    timeFrame= { `${getTodaysDate()}th, ${getMonth().toUpperCase()}` }
+                />
+            </div>
 
-            <Chart
-                borderColor='#A0153E'
-                dataValue={[122, 52, 82, 12, 42, 62, 12, 42, 72, 32, 2, 42, 12, 2, 142, 22, 62, 142, 128, 65, 21, 92, 72, 32, 92, 32, 72, 62, 122, 21]}
-                headingSubtitle={' till date'}
-                timeFrame={ `${getMonth().toUpperCase()}` }
-            />
+            <div style={{ marginTop: '4rem' }}>
+                <Chart
+                    borderColor='#A0153E'
+                    dataValue={[122, 52, 0, 12, 42, 62, 12, 0, 72, 32, -2, 42, 12, 2, 142, 22, -62, 142, 128, 65, 21, 92, 72, 32, 92, 32, 72, 62, 122, 21]}
+                    headingSubtitle={' till date'}
+                    timeFrame={ `${getMonth().toUpperCase()}` }
+                />
+            </div>
 
-            <Chart
-                borderColor='#FDA403'
-                dataValue={[122, 52, 82, 12, 42, 62, 12, 42, 72, 32, 2, 42, 12, 2, 142, 22, 62, 142, 128, 65, 21, 92, 72, 32, 92, 32, 72, 62, 122, 21]}
-                headingSubtitle=' so far'
-                timeFrame={ `${getYear().toUpperCase()}` }
-            />
+            <div style={{ marginTop: '4rem' }}>
+                <Chart
+                    borderColor='#FDA403'
+                    dataValue={[122, 52, 82, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+                    headingSubtitle=' so far'
+                    timeFrame={ `${getYear().toUpperCase()}` }
+                />
+            </div>
         </div>
     </div>)
 }
