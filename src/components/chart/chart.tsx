@@ -6,7 +6,7 @@ import {
     LineElement,
     Title,
     Tooltip,
-    Legend
+    Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import "./chart.scss";
@@ -21,7 +21,13 @@ ChartJS.register(
     Legend
 );
 
-export default function Chart(): JSX.Element {
+interface propType {
+    dataValue: number[],
+    timeFrame: string,
+}
+
+const Chart: React.FC<propType> = ({ dataValue, timeFrame }) => {
+
     const options = {
         responsive: true,
         plugins: {
@@ -54,7 +60,7 @@ export default function Chart(): JSX.Element {
             {
                 backgroundColor: "rgb(235, 88, 88)",
                 borderColor: "rgb(140, 52, 235)",
-                data: [122, 52, 82, 12, 42, 62, 12, 42, 72, 32, 2, 42, 12, 2, 142, 22, 62, 142, 128, 65, 21, 92, 72, 32, 92, 32, 72, 62, 122, 21],
+                data: dataValue,
                 tension: 0.3
             }
         ],
@@ -62,8 +68,9 @@ export default function Chart(): JSX.Element {
 
     return (
         <div className='chart-section'>
-            <h1 className='title'>Activity</h1>
-            <h2 className='sub-title'>this month</h2>
+            <h2 className='sub-title'>{timeFrame}</h2>
             <Line data={data} options={options} />
         </div>)
 }
+
+export default Chart;
